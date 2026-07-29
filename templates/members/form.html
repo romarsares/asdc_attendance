@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }} — ASDC{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h5 class="mb-0">{{ title }}</h5>
+    <a href="{% url 'members:list' %}" class="btn btn-outline-secondary btn-sm">Back to Members</a>
+</div>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="card mb-3">
+        <div class="card-header">Personal Information</div>
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">First Name *</label>
+                    {{ form.first_name }}
+                    {{ form.first_name.errors }}
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Middle Name</label>
+                    {{ form.middle_name }}
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Last Name *</label>
+                    {{ form.last_name }}
+                    {{ form.last_name.errors }}
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Suffix</label>
+                    {{ form.suffix }}
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Gender *</label>
+                    {{ form.gender }}
+                    {{ form.gender.errors }}
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Birthdate *</label>
+                    {{ form.birthdate }}
+                    {{ form.birthdate.errors }}
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Civil Status *</label>
+                    {{ form.civil_status }}
+                    {{ form.civil_status.errors }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header">Contact Information</div>
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">Mobile *</label>
+                    {{ form.mobile }}
+                    {{ form.mobile.errors }}
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Email</label>
+                    {{ form.email }}
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Facebook</label>
+                    {{ form.facebook }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header">Home Address</div>
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-12">
+                    <label class="form-label">Street</label>
+                    {{ form.street }}
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Region</label>
+                    {{ form.region }}
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Province</label>
+                    {{ form.province }}
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Municipality</label>
+                    {{ form.municipality }}
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Barangay</label>
+                    {{ form.barangay }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header">Other</div>
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">Status</label>
+                    {{ form.status }}
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">ID Photo</label>
+                    {{ form.id_photo }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Member</button>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+{% endblock %}
