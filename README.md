@@ -172,7 +172,7 @@ attendance/
 
 ## Phase 1 - Foundation
 
-Status: In Progress
+Status: Completed
 
 Completed:
 
@@ -187,7 +187,7 @@ Next:
 * [x] BaseModel implementation
 * [x] Custom User model
 * [ ] Authentication system
-* [ ] MySQL 8 configuration
+* [x] MySQL 8 configuration
 
 ---
 
@@ -195,12 +195,18 @@ Next:
 
 ## Phase 2 - Member Management
 
-Features:
+Status: In Progress
 
-* Member registration
-* Member profiles
-* Chapter assignment
-* Member status tracking
+Completed:
+
+* [x] Member list view
+* [x] Member registration
+
+Next:
+
+* [ ] Member profiles
+* [ ] Chapter assignment
+* [ ] Member status tracking
 
 ---
 
@@ -456,4 +462,4 @@ Romar
 
 Role:
 
-Technical Lead / Developer
+
